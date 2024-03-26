@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta name="viewport" content=" user-scalable = no" />
+    <script type="text/javascript" src="./extras/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="./extras/modernizr.2.5.3.min.js"></script>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body class="py-[50px] m-0 box-border w-screen h-screen overflow-hidden flex-col flex justify-center items-center bg-black/80">
+    <p class="text-[#FFDE59] text-center"><span class="font-semibold">Album de finissants 2023/2024</span><br/>
+    Realisé par : Salma & Chaima</p>
+    <div class="flex flex-1 w-full">
+    <div class="  h-full flex justify-center items-center">
+        <button class="border p-2 z-10" onclick="previous()"> Précedent </button>
+    </div>
+    <div class="main-container flex flex-1 h-full w-[calc(100%-100px)] relative">
+        <div class="flipbook-viewport">
+            <div class="container">
+                <div class="flipbook">
+                    <div style="background-image:url(pages/cover.png)"></div>
+                    <div style="background-image:url(pages/iprofs.png)"></div>
+                    <div style="background-image:url(pages/profs.png)"></div>
+                    <div style="background-image:url(pages/profs.png)"></div>
+                    <div style="background-image:url(pages/profs.png)"></div>
+                    <div style="background-image:url(pages/profs.png)"></div>
+                    <div style="background-image:url(pages/profs.png)"></div>
+                    <div style="background-image:url(pages/ieleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/eleves.png)"></div>
+                    <div style="background-image:url(pages/imoments.png)"></div>
+                    <div style="background-image:url(pages/moments.png)"></div>
+                    <div style="background-image:url(pages/moments.png)"></div>
+                    <div style="background-image:url(pages/moments.png)"></div>
+                    <div style="background-image:url(pages/fin.png)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="  h-full flex justify-center items-center">
+        <button class="border p-2 z-10" onclick="next()"> Suivant </button>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+        
+            width:1200,
+			
+			// Height
+
+			height:800,
+			// Width
+			//width:$('.main-container')[0].getBoundingClientRect().width,
+			// Height
+			//height:$('.main-container')[0].getBoundingClientRect().height,
+			// Elevation
+			elevation: 50,
+            duration:1000,
+            acceleration:true,
+            //display: 'single',
+			// Enable gradients
+			gradients: true,
+			// Auto center this flipbook
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['lib/turn.js'],
+	nope: ['lib/turn.html4.min.js'],
+	both: ['css/basic.css'],
+	complete: loadApp
+});
+
+$(window).on('resize',(e)=>{
+    //console.log("res")
+    /*$('.flipbook').turn('size',
+			// Width
+			$('.main-container')[0].getBoundingClientRect().width ,
+			// Height
+			$('.main-container')[0].getBoundingClientRect().height)*/
+})
+
+function next(){
+    $('.flipbook').turn('next');
+}
+function previous(){
+    $('.flipbook').turn('previous');
+}
+</script>
+
+<style>
+    /*.flipbook-viewport .container,.flipbook-viewport .flipbook{
+        top:0px !important;
+        left: 0px !important;
+    }*/
+</style>
+</body>
+</html>
