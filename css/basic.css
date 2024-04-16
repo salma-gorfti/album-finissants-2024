@@ -21,10 +21,10 @@ body{
 }
 
 .flipbook-viewport .flipbook{
-	width:1200px;
-	height:750px;
-	left:-600px;
-	top:-375px;
+	width:1050px;
+	height:700px;
+	left:-525px;
+	top:-350px;
 }
 
 .flipbook-viewport .page{
